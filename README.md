@@ -11,7 +11,7 @@ This paper has been accepted by EMNLP 2022.
 
 #### negative data
 
-Download prepared training negative samples from [google drive](https://drive.google.com/drive/folders/1tVxwx21GEBVfVWxU-NXWlRJekBCQyrKw?usp=sharing)
+Download prepared training negative samples for 3 datasets we mentioned from [google drive](https://drive.google.com/drive/folders/1tVxwx21GEBVfVWxU-NXWlRJekBCQyrKw?usp=sharing)
 
 #### positive data
 

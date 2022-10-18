@@ -4,7 +4,7 @@ please follow this [link to see the documentation for CLIFF](https://github.com/
 
 note that there are some noise in the dataset, filter out all the examples with empty target or source
 
-and fairseq doesn't support line-break, remember to replace all the line-break with space
+and fairseq doesn't support line-break for tokenizer, remember to replace all the line-break with space in each example
 
 
 

@@ -1,0 +1,25 @@
+python pl_finetune.py \
+  --model_name_or_path facebook/bart-large \
+  --dataset_name xsum \
+  --negative_train_file "to the path of negative samples" \
+  --output_dir "where to store models" \
+  --num_devices -1 \
+  --learning_rate 3e-5 \
+  --num_beams 6 \
+  --per_device_train_batch_size 4 \
+  --per_device_eval_batch_size 16 \
+  --label_smoothing 0.1 \
+  --clip_norm 0.1 \
+  --num_warmup_steps 500 \
+  --lr_scheduler_type polynomial \
+  --max_epochs 10 \
+  --gradient_accumulation_steps 4 \
+  --weight_decay 0.01 \
+  --strategy deepspeed_stage_1 \
+  --fp16 True \
+  --do_train \
+  --val_check_interval 1.0 \
+  --val_max_target_length 80 \
+  --negative_weight 0.4 \
+  --mapping_file_path \
+  /somewhere/xsum_mapping_file.pickle\ #"to the path of mapping file"\

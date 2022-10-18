@@ -1,0 +1,33 @@
+export WANDB_DISABLED=true
+export WANDB_PROJECT=HF_finetune_xsum
+deepspeed --num_gpus=2 run_summarization.py \
+  --model_name_or_path facebook/bart-large \
+  --resume_from_checkpoint "if training interrupted by accident, where to restore " \
+  --do_predict \
+  --dataset_name xsum \
+  --output_dir "where to store fine-tuned model" \
+  --overwrite_output_dir \
+  --learning_rate 3e-05 \
+  --label_smoothing_factor 0.1 \
+  --greater_is_better True \
+  --warmup_steps 500 \
+  --num_train_epochs 10 \
+  --max_source_length 1024 \
+  --max_target_length 1024 \
+  --val_max_target_length 80 \
+  --gradient_accumulation_steps 2 \
+  --per_device_train_batch_size 16 \
+  --per_device_eval_batch_size 32 \
+  --num_beams 6 \
+  --save_strategy steps \
+  --save_steps 750 \
+  --evaluation_strategy steps \
+  --eval_steps 750 \
+  --load_best_model_at_end True \
+  --metric_for_best_model loss \
+  --greater_is_better False \
+  --predict_with_generate \
+  --fp16 True \
+  --deepspeed deepspeed_config/ds_config_zero3_no_ram_swap_linearLR.json \
+  --max_eval_samples 1000 \
+  --max_predict_samples 1000

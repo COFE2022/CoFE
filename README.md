@@ -2,6 +2,17 @@
 
 Code for "Improving Faithfulness by Augmenting Negative Summaries from Fake Documents"
 
+---
+If you find our work useful, please kindly leave a star. Thanks!
+```bibtex
+@article{wang-2022-ImprovingFD,
+  title={Improving Faithfulness by Augmenting Negative Summaries from Fake Documents},
+  author={Wang, Tianshu and Ladhak,Faisal and Durmus, Esin and He, He},
+  year={2022}
+ 
+}
+```
+
 ## News
 This paper has been accepted by EMNLP 2022.
 
